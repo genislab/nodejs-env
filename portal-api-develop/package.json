@@ -1,0 +1,59 @@
+{
+  "name": "iemanager",
+  "version": "1.0.0",
+  "description": "Industrial Edge Manager, A Siemen's IE management system allowing users to download an configure IE software packages .",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "nodemon --watch . --ext ts --exec \"mocha -r ts-node/register test/**/*.test.ts\"",
+    "start": "tsc && node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@code.siemens.com:m3-fa-poc/iem-services/portal-api.git"
+  },
+  "author": "CSP Egypt",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "12.7.9",
+    "@types/uuid": "3.4.6",
+    "aws-sdk": "2.579.0",
+    "bluebird": "3.7.0",
+    "body-parser": "1.19.0",
+    "btoa": "1.2.1",
+    "chai-http": "4.3.0",
+    "class-transformer": "0.2.3",
+    "class-validator": "0.10.1",
+    "core-js": "2.6.10",
+    "cors": "2.8.5",
+    "dotenv": "8.1.0",
+    "enum-values": "1.2.1",
+    "events": "3.0.0",
+    "express": "4.17.1",
+    "hal": "1.2.0",
+    "mkiso": "0.1.1",
+    "mysql": "2.17.1",
+    "random": "2.1.1",
+    "reflect-metadata": "0.1.13",
+    "request": "2.88.0",
+    "routing-controllers": "0.8.0",
+    "swagger-ui-express": "4.1.2",
+    "typeorm": "0.2.19",
+    "typeorm-transactional-cls-hooked": "0.1.8",
+    "typescript": "3.6.4",
+    "typeserializer": "0.2.3",
+    "uuid": "3.3.3"
+  },
+  "devDependencies": {
+    "@types/chai": "4.2.6",
+    "@types/mocha": "5.2.7",
+    "@types/supertest": "2.0.8",
+    "chai": "4.2.0",
+    "mocha": "6.2.2",
+    "nodemon": "1.19.3",
+    "supertest": "4.0.2",
+    "ts-node": "8.4.1"
+  }
+}

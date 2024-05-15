@@ -1,0 +1,16 @@
+{"iem-app-monitors": {
+    "monitors": [
+        {
+            "id": "1ea224a5-82e3-4910-8a64-8a3fc07e6f21",
+            "name": "iem_monitor",
+            "uid": "7088912-1ea224a5-82e3-4910-8a64-8a3fc07e6f21",
+            "owner": 7088912
+        },
+        {
+            "id": "1ea117d4-8c73-4360-aea8-a3c0aaddbee5",
+            "name": "webhook",
+            "uid": "7088912-1ea117d4-8c73-4360-aea8-a3c0aaddbee5",
+            "owner": 7088912
+        }
+
+    ]}}

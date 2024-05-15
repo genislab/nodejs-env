@@ -1,0 +1,212 @@
+{
+	"id": "78cf3631-4983-4a0f-9475-b13545eec85b",
+	"name": "iem_app_test",
+	"values": [
+		{
+			"key": "iems-test",
+			"value": null,
+			"enabled": true
+		},
+		{
+			"key": "iems-auth",
+			"value": null,
+			"enabled": true
+		},
+		{
+			"key": "iems-test-response-time",
+			"value": null,
+			"enabled": true
+		},
+		{
+			"key": "iems-test-secured",
+			"value": null,
+			"enabled": true
+		},
+		{
+			"key": "iems-test-schema",
+			"value": null,
+			"enabled": true
+		},
+		{
+			"key": "iems-test-result",
+			"value": null,
+			"enabled": true
+		},
+		{
+			"key": "iems-function",
+			"value": null,
+			"enabled": true
+		},
+		{
+			"key": "iems-method",
+			"value": "validator",
+			"enabled": true
+		},
+		{
+			"key": "iems-monitor",
+			"value": "true",
+			"enabled": true
+		},
+		{
+			"key": "iems-mock-host",
+			"value": "iem_test_host",
+			"enabled": true
+		},
+		{
+			"key": "iems-production",
+			"value": "false",
+			"enabled": true
+		},
+		{
+			"key": "iems-docs",
+			"value": "true",
+			"enabled": true
+		},
+		{
+			"key": "iems-tennant-host",
+			"value": "https://edgedev1.eu1.mindsphere.io",
+			"enabled": true
+		},
+		{
+			"key": "iems-customer-id",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "iems-user-id",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "id",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "iems-request-body",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "iems-download-uri",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "iems-host",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "iems-vm-id",
+			"value": "558ssb-85e5-4755-ad2c-19dcb46cb907",
+			"enabled": true
+		},
+		{
+			"key": "iems-account-id",
+			"value": "193",
+			"enabled": true
+		},
+		{
+			"key": "iems-transaction-type",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "iems-package-id",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "iems-conf-id",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "iems-conf-meta",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "iems-conf-resource",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "iems-conf-version",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "iems-transaction-type-id",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "iems-transaction-date",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "iems-instance-id",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "iems-license-id",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "iems-device-id",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "iems-device-status",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "iems-license-status",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "iems-device-name",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "iems-device-serial",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "iems-start-date",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "iems-end-date",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "identity-integration-host",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "content-type",
+			"value": "application/json",
+			"enabled": true
+		},
+		{
+			"key": "iems-conf-json",
+			"value": "{\n    \"name\": \"<string>\",\n    \"configuration\": {\n        \"keyboard-config\": \"<string>\",\n        \"hostname\": \"<string>\",\n        \"dhcb\": \"<string>\",\n        \"dhcp-settings\": {\n            \"automatic-dns\": \"<string>\",\n            \"dns-ips\": [\n                \"<string>\",\n                \"<string>\"\n            ]\n        },\n        \"proxy\": \"<string>\",\n        \"proxy-credentials\": {\n            \"url\": \"<string>\",\n            \"username\": \"<string>\",\n            \"password\": \"<string>\"\n        },\n        \"user-credentials\": {\n            \"client-id\": \"<string>\",\n            \"acessToken\": \"<string>\"\n        }\n    },\n    \"version\": \"<string>\",\n    \"instance\": \"<integer>\"\n}",
+			"enabled": true
+		}
+	]
+
+}

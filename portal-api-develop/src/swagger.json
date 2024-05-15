@@ -1,0 +1,1149 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "iemanager",
+    "description": "IEManger Application Backend APIs",
+    "contact": {}
+  },
+  "host": "",
+  "basePath": "/iemanager",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/v1/iems/{iemsId}/configurations": {
+      "post": {
+        "description": "Customizes the configuration, it  will be stored in DB and then ISO engine module will generate the json once a download is requested. This service will store this configurations in DB to enable user to retrieve the configuration in future instances for re-use and to track configurations for created VM images.",
+        "summary": "Create user configuration",
+        "tags": [
+          "IEManager"
+        ],
+        "operationId": "ApiV1Users5ConfigurationPost",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "account_id",
+            "in": "header",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "Customer",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "iemsId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CreateuserconfigurationRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v1/configurations": {
+      "get": {
+        "description": "List the history of configuration generated or get the specific one by user id",
+        "summary": "Get user configuration",
+        "tags": [
+          "IEManager"
+        ],
+        "operationId": "ApiV1Users19ConfigurationGet",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "iems-id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v1/configurations/{id}": {
+      "get": {
+        "description": "Get configuration by id",
+        "summary": "Get user configuration",
+        "tags": [
+          "IEManager"
+        ],
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v1/iems/{iemsId}/devices": {
+      "get": {
+        "description": "List all devices that onboarded on specific iems",
+        "summary": "Get iems devices",
+        "tags": [
+          "IEManager"
+        ],
+        "operationId": "ApiV1Users100Iems10DevicesGet",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "account_id",
+            "in": "header",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "Customer",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "iemsId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v1/iems": {
+      "get": {
+        "description": "List all iems per user",
+        "summary": "Get iems ",
+        "tags": [
+          "IEManager"
+        ],
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "account_id",
+            "in": "header",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "Customer",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v1/iems/{id}": {
+      "get": {
+        "description": "List all iems per user",
+        "summary": "Get iems ",
+        "tags": [
+          "IEManager"
+        ],
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "account_id",
+            "in": "header",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "Customer",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },{
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v1/transactions/iems": {
+      "get": {
+        "description": "List or transactions related to iems calls",
+        "summary": "Get user iems transactions",
+        "tags": [
+          "IEManager"
+        ],
+        "operationId": "ApiV1UsersUserIdIemsTransactionsGet",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "account_id",
+            "in": "header",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "Customer",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v1/iems/{iemsId}/devices/checkout": {
+      "post": {
+        "description": "Checkout License for new device onboarding to specific iems",
+        "summary": "Check out device license",
+        "tags": [
+          "IEManager"
+        ],
+        "operationId": "ApiV1Users100Iems10DevicesCheckoutPost",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "account_id",
+            "in": "header",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "Customer",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          }, 
+          {
+            "name": "iemsId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CheckoutdevicelicenseRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v1/iems/{iemsId}/devices/check-in": {
+      "post": {
+        "description": "Check in license per specific iems ",
+        "summary": "Check in license device",
+        "tags": [
+          "IEManager"
+        ],
+        "operationId": "ApiV1Users100Iems10DevicesCheckInPost",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "account_id",
+            "in": "header",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "Customer",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          
+          {
+            "name": "iemsId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CheckinlicensedeviceRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v1/iems/{iemsId}/devices/check-in-devices": {
+      "post": {
+        "description": "Check in all licence that consumed by specific IEMS",
+        "summary": "Check-in all devices per IEMS",
+        "tags": [
+          "IEManager"
+        ],
+        "operationId": "ApiV1Users100Iems100DevicesCheckInDevicesGet",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "account_id",
+            "in": "header",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "Customer",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          
+          {
+            "name": "iemsId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v1/iems-download/{instanceId}": {
+      "get": {
+        "description": "Download IEMS firmware package",
+        "summary": "Download user IEMS package",
+        "tags": [
+          "IEManager"
+        ],
+        "operationId": "ApiV1Users100PackageGet",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "account_id",
+            "in": "header",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "Customer",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },{
+            "name": "instanceId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v1/transactions/devices/{fromDate}": {
+      "get": {
+        "description": "List all device transactions",
+        "summary": "Get user IE devices transactions history",
+        "tags": [
+          "IEManager"
+        ],
+        "operationId": "ApiUsersUserIdDeviceTransactionsGet",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "fromDate",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "toDate",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "account_id",
+            "in": "header",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "Customer",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v1/subscription-packages": {
+      "get": {
+        "description": "List all avaliable packages in FA system",
+        "summary": "Get subscription packages",
+        "tags": [
+          "IEManager"
+        ],
+        "operationId": "ApiV1SubscriptionPackagesGet",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "account_id",
+            "in": "header",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "Customer",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v1/firmwares": {
+      "get": {
+        "description": "List all avaliable firmares in FA system",
+        "summary": "Get firmares",
+        "tags": [
+          "IEManager"
+        ],
+        "operationId": "",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "account_id",
+            "in": "header",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "Customer",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v1/firmwares/{iemsId}/uri": {
+      "get": {
+        "description": "Get confige download link ",
+        "summary": "Get firmares uri",
+        "tags": [
+          "IEManager"
+        ],
+        "operationId": "",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "account_id",
+            "in": "header",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "Customer",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          }, {
+            "name": "iemsId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v1/purchasing-packages": {
+      "post": {
+        "description": "Allow user to purchase chosen package",
+        "summary": "Purchase user package",
+        "tags": [
+          "IEManager"
+        ],
+        "operationId": "ApiV1Users:userIdPackagePurchasePost",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "account_id",
+            "in": "header",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "Customer",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PurchaseuserpackageRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v1/activities": {
+      "get": {
+        "description": "List all transactions per user",
+        "summary": "Get all user activities (All transactions)",
+        "tags": [
+          "IEManager"
+        ],
+        "operationId": "ApiV1Users100ActivitiesGet",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "transaction-type",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "date-from",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "date-to",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "account_id",
+            "in": "header",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "Customer",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v1/user-subscription-packages": {
+      "get": {
+        "description": "List all Subscriptin pakcages by user",
+        "summary": "Get user subscribed packages",
+        "tags": [
+          "IEManager"
+        ],
+        "operationId": "ApiV1UsersUserIdSubscriptionPackagesGet",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "account_id",
+            "in": "header",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "Customer",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v1/subscription-packages/{packageId}/decommission": {
+      "post": {
+        "description": "Decimmission subscription package, by make it not auto renewal",
+        "summary": "Decommission user package",
+        "tags": [
+          "IEManager"
+        ],
+        "operationId": "Users100PackageDecommissionPost",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "account_id",
+            "in": "header",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "Customer",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "packageId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "User Package UUID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "CreateuserconfigurationRequest": {
+      "title": "CreateuserconfigurationRequest",
+      "example": {
+        "name": "example-configuration",
+        "configuration": {
+          "keyboard-config": "en",
+          "hostname": "example.host.mentor.com",
+          "dhcb": "yes",
+          "dhcp-settings": {
+            "automatic-dns": "yes",
+            "dns-ips": [
+              "137.202.38.2"
+            ]
+          },
+          "proxy": "enabled",
+          "proxy-credentials": {
+            "url": "139.126.38.2",
+            "username": "admin",
+            "password": "P@$$w0Rd"
+          },
+          "user-credentials": {
+            "client-id": "ZYDPLLBWSK3MVQJSIYHB1OR2JXCY0X2C5UJ2QAR2MAAIT5Q",
+            "acessToken": "YXBpVXJsOiAiaHR0cHM6Ly9teS5hcGkuY29tL2FwaS92MSIKdXNlcm5hbWU6IHt7dXNlcm5hbWV9fQpwYXNzd29yZDoge3twYXNzd29yZH19"
+          }
+        },
+        "version": "1.0.0",
+        "instance": 1
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "configuration": {
+          "$ref": "#/definitions/Configuration"
+        },
+        "version": {
+          "type": "string"
+        },
+        "instance": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "name",
+        "configuration",
+        "version",
+        "instance"
+      ]
+    },
+    "Configuration": {
+      "title": "Configuration",
+      "example": {
+        "keyboard-config": "en",
+        "hostname": "example.host.mentor.com",
+        "dhcb": "yes",
+        "dhcp-settings": {
+          "automatic-dns": "yes",
+          "dns-ips": [
+            "137.202.38.2"
+          ]
+        },
+        "proxy": "enabled",
+        "proxy-credentials": {
+          "url": "139.126.38.2",
+          "username": "admin",
+          "password": "P@$$w0Rd"
+        },
+        "user-credentials": {
+          "client-id": "ZYDPLLBWSK3MVQJSIYHB1OR2JXCY0X2C5UJ2QAR2MAAIT5Q",
+          "acessToken": "YXBpVXJsOiAiaHR0cHM6Ly9teS5hcGkuY29tL2FwaS92MSIKdXNlcm5hbWU6IHt7dXNlcm5hbWV9fQpwYXNzd29yZDoge3twYXNzd29yZH19"
+        }
+      },
+      "type": "object",
+      "properties": {
+        "keyboard-config": {
+          "type": "string"
+        },
+        "hostname": {
+          "type": "string"
+        },
+        "dhcb": {
+          "type": "string"
+        },
+        "dhcp-settings": {
+          "$ref": "#/definitions/DhcpSettings"
+        },
+        "proxy": {
+          "type": "string"
+        },
+        "proxy-credentials": {
+          "$ref": "#/definitions/ProxyCredentials"
+        },
+        "user-credentials": {
+          "$ref": "#/definitions/UserCredentials"
+        }
+      },
+      "required": [
+        "keyboard-config",
+        "hostname",
+        "dhcb",
+        "dhcp-settings",
+        "proxy",
+        "proxy-credentials",
+        "user-credentials"
+      ]
+    },
+    "DhcpSettings": {
+      "title": "DhcpSettings",
+      "example": {
+        "automatic-dns": "yes",
+        "dns-ips": [
+          "137.202.38.2"
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "automatic-dns": {
+          "type": "string"
+        },
+        "dns-ips": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "automatic-dns",
+        "dns-ips"
+      ]
+    },
+    "ProxyCredentials": {
+      "title": "ProxyCredentials",
+      "example": {
+        "url": "139.126.38.2",
+        "username": "admin",
+        "password": "P@$$w0Rd"
+      },
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "url",
+        "username",
+        "password"
+      ]
+    },
+    "UserCredentials": {
+      "title": "UserCredentials",
+      "example": {
+        "client-id": "ZYDPLLBWSK3MVQJSIYHB1OR2JXCY0X2C5UJ2QAR2MAAIT5Q",
+        "acessToken": "YXBpVXJsOiAiaHR0cHM6Ly9teS5hcGkuY29tL2FwaS92MSIKdXNlcm5hbWU6IHt7dXNlcm5hbWV9fQpwYXNzd29yZDoge3twYXNzd29yZH19"
+      },
+      "type": "object",
+      "properties": {
+        "client-id": {
+          "type": "string"
+        },
+        "acessToken": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "client-id",
+        "acessToken"
+      ]
+    },
+    "CheckoutdevicelicenseRequest": {
+      "title": "CheckoutdevicelicenseRequest",
+      "example": {
+        "serialNo": "Abc091231",
+        "name" : "device_name"
+      },
+      "type": "object",
+      "properties": {
+        "device_sn": {
+          "type": "string"
+        },
+        "device_name": {
+          "type": "string"
+        },
+        "iems_hostname": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "serialNo",
+        "name"
+      ]
+    },
+    "CheckinlicensedeviceRequest": {
+      "title": "CheckinlicensedeviceRequest",
+      "example": {
+        "serialNo": "Device-PRE-001"
+      },
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "serialNo": {
+          "type": "string"
+        },
+        "device_name": {
+          "type": "string"
+        },
+        "license_status": {
+          "type": "string"
+        },
+        "subscriptionDate": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "required": [
+        "device_name"
+      ]
+    },
+    "PurchaseuserpackageRequest": {
+      "title": "PurchaseuserpackageRequest",
+      "example": {
+        "id": "5447076f-ea8d-4d47-a5e7-acae08f60db2"
+      },
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "IEManager",
+      "description": ""
+    }
+  ]
+}

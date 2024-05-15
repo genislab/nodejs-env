@@ -1,0 +1,1824 @@
+{
+	"info": {
+		"_postman_id": "fee6fb62-6df3-416a-8b35-2c96653b6cbe",
+		"name": "iem-test-agent",
+		"description": "IEManger Application Backend APIs\n\nContact Support: \n{\n\nName : undefined\n\nEmail : undefined\n\n}",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "v1",
+					"item": [
+						{
+							"name": "iems",
+							"item": [
+								{
+									"name": "{iems Id}",
+									"item": [
+										{
+											"name": "devices",
+											"item": [
+												{
+													"name": "Get iems devices",
+													"request": {
+														"auth": {
+															"type": "noauth"
+														},
+														"method": "GET",
+														"header": [
+															{
+																"key": "authorization",
+																"value": "<string>"
+															},
+															{
+																"key": "account_id",
+																"value": "<integer>"
+															},
+															{
+																"key": "Customer",
+																"value": "<string>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/iems/:iemsId/devices",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"iems",
+																":iemsId",
+																"devices"
+															],
+															"variable": [
+																{
+																	"id": "bfbd5640-62f4-4d88-8d56-bfd180431b67",
+																	"key": "iemsId",
+																	"value": "<string>",
+																	"type": "string",
+																	"description": {
+																		"content": "",
+																		"type": "text/plain"
+																	}
+																}
+															]
+														},
+														"description": "List all devices that onboarded on specific iems"
+													},
+													"response": [
+														{
+															"name": "Untitled Example",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "authorization",
+																		"value": "<string>"
+																	},
+																	{
+																		"key": "account_id",
+																		"value": "<integer>"
+																	},
+																	{
+																		"key": "Customer",
+																		"value": "<string>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/iems/<string>/devices",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"iems",
+																		"<string>",
+																		"devices"
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "text/plain"
+																}
+															],
+															"cookie": [],
+															"body": ""
+														}
+													]
+												},
+												{
+													"name": "Check out device license",
+													"request": {
+														"auth": {
+															"type": "noauth"
+														},
+														"method": "POST",
+														"header": [
+															{
+																"key": "authorization",
+																"value": "<string>"
+															},
+															{
+																"key": "account_id",
+																"value": "<integer>"
+															},
+															{
+																"key": "Customer",
+																"value": "<string>"
+															},
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n    \"device_sn\": \"<string>\",\n    \"device_name\": \"<string>\",\n    \"iems_hostname\": \"<string>\"\n}"
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/iems/:iemsId/devices/checkout",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"iems",
+																":iemsId",
+																"devices",
+																"checkout"
+															],
+															"variable": [
+																{
+																	"id": "89422946-c2d5-4b22-bce7-7ae1470b67b8",
+																	"key": "iemsId",
+																	"value": "<string>",
+																	"type": "string",
+																	"description": {
+																		"content": "",
+																		"type": "text/plain"
+																	}
+																}
+															]
+														},
+														"description": "Checkout License for new device onboarding to specific iems"
+													},
+													"response": [
+														{
+															"name": "Untitled Example",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "authorization",
+																		"value": "<string>"
+																	},
+																	{
+																		"key": "account_id",
+																		"value": "<integer>"
+																	},
+																	{
+																		"key": "Customer",
+																		"value": "<string>"
+																	},
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n    \"device_sn\": \"<string>\",\n    \"device_name\": \"<string>\",\n    \"iems_hostname\": \"<string>\"\n}"
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/iems/<string>/devices/checkout",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"iems",
+																		"<string>",
+																		"devices",
+																		"checkout"
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "text/plain"
+																}
+															],
+															"cookie": [],
+															"body": ""
+														}
+													]
+												},
+												{
+													"name": "Check in license device",
+													"request": {
+														"auth": {
+															"type": "noauth"
+														},
+														"method": "POST",
+														"header": [
+															{
+																"key": "authorization",
+																"value": "<string>"
+															},
+															{
+																"key": "account_id",
+																"value": "<integer>"
+															},
+															{
+																"key": "Customer",
+																"value": "<string>"
+															},
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n    \"device_name\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"serialNo\": \"<string>\",\n    \"license_status\": \"<string>\",\n    \"subscriptionDate\": \"<long>\"\n}"
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/iems/:iemsId/devices/check-in",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"iems",
+																":iemsId",
+																"devices",
+																"check-in"
+															],
+															"variable": [
+																{
+																	"id": "2cf8c959-fc86-4281-aa0f-fbb2ad0dac38",
+																	"key": "iemsId",
+																	"value": "<string>",
+																	"type": "string",
+																	"description": {
+																		"content": "",
+																		"type": "text/plain"
+																	}
+																}
+															]
+														},
+														"description": "Check in license per specific iems "
+													},
+													"response": [
+														{
+															"name": "Untitled Example",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "authorization",
+																		"value": "<string>"
+																	},
+																	{
+																		"key": "account_id",
+																		"value": "<integer>"
+																	},
+																	{
+																		"key": "Customer",
+																		"value": "<string>"
+																	},
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n    \"device_name\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"serialNo\": \"<string>\",\n    \"license_status\": \"<string>\",\n    \"subscriptionDate\": \"<long>\"\n}"
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/iems/<string>/devices/check-in",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"iems",
+																		"<string>",
+																		"devices",
+																		"check-in"
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "text/plain"
+																}
+															],
+															"cookie": [],
+															"body": ""
+														}
+													]
+												},
+												{
+													"name": "Check-in all devices per IEMS",
+													"request": {
+														"auth": {
+															"type": "noauth"
+														},
+														"method": "POST",
+														"header": [
+															{
+																"key": "authorization",
+																"value": "<string>"
+															},
+															{
+																"key": "account_id",
+																"value": "<integer>"
+															},
+															{
+																"key": "Customer",
+																"value": "<string>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/iems/:iemsId/devices/check-in-devices",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"iems",
+																":iemsId",
+																"devices",
+																"check-in-devices"
+															],
+															"variable": [
+																{
+																	"id": "8842389e-bddb-4b63-879a-7a9f0d7811d2",
+																	"key": "iemsId",
+																	"value": "<string>",
+																	"type": "string",
+																	"description": {
+																		"content": "",
+																		"type": "text/plain"
+																	}
+																}
+															]
+														},
+														"description": "Check in all licence that consumed by specific IEMS"
+													},
+													"response": [
+														{
+															"name": "Untitled Example",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "authorization",
+																		"value": "<string>"
+																	},
+																	{
+																		"key": "account_id",
+																		"value": "<integer>"
+																	},
+																	{
+																		"key": "Customer",
+																		"value": "<string>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/iems/<string>/devices/check-in-devices",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"iems",
+																		"<string>",
+																		"devices",
+																		"check-in-devices"
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "text/plain"
+																}
+															],
+															"cookie": [],
+															"body": ""
+														}
+													]
+												}
+											],
+											"protocolProfileBehavior": {},
+											"_postman_isSubFolder": true
+										},
+										{
+											"name": "Create user configuration",
+											"request": {
+												"auth": {
+													"type": "noauth"
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "authorization",
+														"value": "<string>"
+													},
+													{
+														"key": "account_id",
+														"value": "<integer>"
+													},
+													{
+														"key": "Customer",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"name\": \"<string>\",\n    \"configuration\": {\n        \"keyboard-config\": \"<string>\",\n        \"hostname\": \"<string>\",\n        \"dhcb\": \"<string>\",\n        \"dhcp-settings\": {\n            \"automatic-dns\": \"<string>\",\n            \"dns-ips\": [\n                \"<string>\",\n                \"<string>\"\n            ]\n        },\n        \"proxy\": \"<string>\",\n        \"proxy-credentials\": {\n            \"url\": \"<string>\",\n            \"username\": \"<string>\",\n            \"password\": \"<string>\"\n        },\n        \"user-credentials\": {\n            \"client-id\": \"<string>\",\n            \"acessToken\": \"<string>\"\n        }\n    },\n    \"version\": \"<string>\",\n    \"instance\": \"<integer>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/iems/:iemsId/configurations",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"iems",
+														":iemsId",
+														"configurations"
+													],
+													"variable": [
+														{
+															"id": "5a116d70-5f9f-478e-9a3f-e23a967a8f12",
+															"key": "iemsId",
+															"value": "<string>",
+															"type": "string",
+															"description": {
+																"content": "",
+																"type": "text/plain"
+															}
+														}
+													]
+												},
+												"description": "Customizes the configuration, it  will be stored in DB and then ISO engine module will generate the json once a download is requested. This service will store this configurations in DB to enable user to retrieve the configuration in future instances for re-use and to track configurations for created VM images."
+											},
+											"response": [
+												{
+													"name": "Untitled Example",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "authorization",
+																"value": "<string>"
+															},
+															{
+																"key": "account_id",
+																"value": "<integer>"
+															},
+															{
+																"key": "Customer",
+																"value": "<string>"
+															},
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n    \"name\": \"<string>\",\n    \"configuration\": {\n        \"keyboard-config\": \"<string>\",\n        \"hostname\": \"<string>\",\n        \"dhcb\": \"<string>\",\n        \"dhcp-settings\": {\n            \"automatic-dns\": \"<string>\",\n            \"dns-ips\": [\n                \"<string>\",\n                \"<string>\"\n            ]\n        },\n        \"proxy\": \"<string>\",\n        \"proxy-credentials\": {\n            \"url\": \"<string>\",\n            \"username\": \"<string>\",\n            \"password\": \"<string>\"\n        },\n        \"user-credentials\": {\n            \"client-id\": \"<string>\",\n            \"acessToken\": \"<string>\"\n        }\n    },\n    \"version\": \"<string>\",\n    \"instance\": \"<integer>\"\n}"
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/iems/<string>/configurations",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"iems",
+																"<string>",
+																"configurations"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									],
+									"protocolProfileBehavior": {},
+									"_postman_isSubFolder": true
+								},
+								{
+									"name": "Get iems ",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "authorization",
+												"value": "<string>"
+											},
+											{
+												"key": "account_id",
+												"value": "<integer>"
+											},
+											{
+												"key": "Customer",
+												"value": "<string>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/iems",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"iems"
+											]
+										},
+										"description": "List all iems per user"
+									},
+									"response": [
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "authorization",
+														"value": "<string>"
+													},
+													{
+														"key": "account_id",
+														"value": "<integer>"
+													},
+													{
+														"key": "Customer",
+														"value": "<string>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/iems",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"iems"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Get iems ",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "authorization",
+												"value": "<string>"
+											},
+											{
+												"key": "account_id",
+												"value": "<integer>"
+											},
+											{
+												"key": "Customer",
+												"value": "<string>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/iems/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"iems",
+												":id"
+											],
+											"variable": [
+												{
+													"id": "023f715e-08c5-4379-9180-aa02331a2629",
+													"key": "id",
+													"value": "<string>",
+													"type": "string",
+													"description": {
+														"content": "",
+														"type": "text/plain"
+													}
+												}
+											]
+										},
+										"description": "List all iems per user"
+									},
+									"response": [
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "authorization",
+														"value": "<string>"
+													},
+													{
+														"key": "account_id",
+														"value": "<integer>"
+													},
+													{
+														"key": "Customer",
+														"value": "<string>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/iems/<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"iems",
+														"<string>"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "configurations",
+							"item": [
+								{
+									"name": "Get user configuration",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/configurations?iems-id=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"configurations"
+											],
+											"query": [
+												{
+													"key": "iems-id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "List the history of configuration generated or get the specific one by user id"
+									},
+									"response": [
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/configurations?iems-id=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"configurations"
+													],
+													"query": [
+														{
+															"key": "iems-id",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Get user configuration",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/configurations/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"configurations",
+												":id"
+											],
+											"variable": [
+												{
+													"id": "5d7b326c-0a72-4035-a2ce-5bf5ef48708e",
+													"key": "id",
+													"value": "<string>",
+													"type": "string",
+													"description": {
+														"content": "",
+														"type": "text/plain"
+													}
+												}
+											]
+										},
+										"description": "Get configuration by id"
+									},
+									"response": [
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/configurations/<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"configurations",
+														"<string>"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "transactions",
+							"item": [
+								{
+									"name": "Get user iems transactions",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "authorization",
+												"value": "<string>"
+											},
+											{
+												"key": "account_id",
+												"value": "<integer>"
+											},
+											{
+												"key": "Customer",
+												"value": "<string>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/transactions/iems",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"transactions",
+												"iems"
+											]
+										},
+										"description": "List or transactions related to iems calls"
+									},
+									"response": [
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "authorization",
+														"value": "<string>"
+													},
+													{
+														"key": "account_id",
+														"value": "<integer>"
+													},
+													{
+														"key": "Customer",
+														"value": "<string>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/transactions/iems",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"transactions",
+														"iems"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Get user IE devices transactions history",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "authorization",
+												"value": "<string>"
+											},
+											{
+												"key": "account_id",
+												"value": "<integer>"
+											},
+											{
+												"key": "Customer",
+												"value": "<string>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/transactions/devices/:fromDate?toDate=<long>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"transactions",
+												"devices",
+												":fromDate"
+											],
+											"query": [
+												{
+													"key": "toDate",
+													"value": "<long>"
+												}
+											],
+											"variable": [
+												{
+													"id": "3de5d4a7-5ecd-44b5-9a97-2bc61727a57d",
+													"key": "fromDate",
+													"value": "<long>",
+													"type": "string",
+													"description": {
+														"content": "",
+														"type": "text/plain"
+													}
+												}
+											]
+										},
+										"description": "List all device transactions"
+									},
+									"response": [
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "authorization",
+														"value": "<string>"
+													},
+													{
+														"key": "account_id",
+														"value": "<integer>"
+													},
+													{
+														"key": "Customer",
+														"value": "<string>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/transactions/devices/<long>?toDate=<long>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"transactions",
+														"devices",
+														"<long>"
+													],
+													"query": [
+														{
+															"key": "toDate",
+															"value": "<long>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "subscription-packages",
+							"item": [
+								{
+									"name": "Get subscription packages",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "authorization",
+												"value": "<string>"
+											},
+											{
+												"key": "account_id",
+												"value": "<integer>"
+											},
+											{
+												"key": "Customer",
+												"value": "<string>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/subscription-packages",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"subscription-packages"
+											]
+										},
+										"description": "List all avaliable packages in FA system"
+									},
+									"response": [
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "authorization",
+														"value": "<string>"
+													},
+													{
+														"key": "account_id",
+														"value": "<integer>"
+													},
+													{
+														"key": "Customer",
+														"value": "<string>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/subscription-packages",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"subscription-packages"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Decommission user package",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "authorization",
+												"value": "<string>"
+											},
+											{
+												"key": "account_id",
+												"value": "<integer>"
+											},
+											{
+												"key": "Customer",
+												"value": "<string>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/subscription-packages/:packageId/decommission",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"subscription-packages",
+												":packageId",
+												"decommission"
+											],
+											"variable": [
+												{
+													"id": "079807d0-d569-40b5-b4d6-e3c90ed20b67",
+													"key": "packageId",
+													"value": "<string>",
+													"type": "string",
+													"description": {
+														"content": "User Package UUID",
+														"type": "text/plain"
+													}
+												}
+											]
+										},
+										"description": "Decimmission subscription package, by make it not auto renewal"
+									},
+									"response": [
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "authorization",
+														"value": "<string>"
+													},
+													{
+														"key": "account_id",
+														"value": "<integer>"
+													},
+													{
+														"key": "Customer",
+														"value": "<string>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/subscription-packages/<string>/decommission",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"subscription-packages",
+														"<string>",
+														"decommission"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "firmwares",
+							"item": [
+								{
+									"name": "Get firmares",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "authorization",
+												"value": "<string>"
+											},
+											{
+												"key": "account_id",
+												"value": "<integer>"
+											},
+											{
+												"key": "Customer",
+												"value": "<string>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/firmwares",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"firmwares"
+											]
+										},
+										"description": "List all avaliable firmares in FA system"
+									},
+									"response": [
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "authorization",
+														"value": "<string>"
+													},
+													{
+														"key": "account_id",
+														"value": "<integer>"
+													},
+													{
+														"key": "Customer",
+														"value": "<string>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/firmwares",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"firmwares"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Get firmares uri",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "authorization",
+												"value": "<string>"
+											},
+											{
+												"key": "account_id",
+												"value": "<integer>"
+											},
+											{
+												"key": "Customer",
+												"value": "<string>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/firmwares/:iemsId/uri",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"firmwares",
+												":iemsId",
+												"uri"
+											],
+											"variable": [
+												{
+													"id": "2b52d0c4-81a1-44fd-b175-0122da46f57c",
+													"key": "iemsId",
+													"value": "<string>",
+													"type": "string",
+													"description": {
+														"content": "",
+														"type": "text/plain"
+													}
+												}
+											]
+										},
+										"description": "Get confige download link "
+									},
+									"response": [
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "authorization",
+														"value": "<string>"
+													},
+													{
+														"key": "account_id",
+														"value": "<integer>"
+													},
+													{
+														"key": "Customer",
+														"value": "<string>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/firmwares/<string>/uri",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"firmwares",
+														"<string>",
+														"uri"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Download user IEMS package",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "<string>"
+									},
+									{
+										"key": "account_id",
+										"value": "<integer>"
+									},
+									{
+										"key": "Customer",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/iems-download/:instanceId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"iems-download",
+										":instanceId"
+									],
+									"variable": [
+										{
+											"id": "3338efa7-ef97-4ba7-b8df-d190a8d00acc",
+											"key": "instanceId",
+											"value": "<string>",
+											"type": "string",
+											"description": {
+												"content": "",
+												"type": "text/plain"
+											}
+										}
+									]
+								},
+								"description": "Download IEMS firmware package"
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "authorization",
+												"value": "<string>"
+											},
+											{
+												"key": "account_id",
+												"value": "<integer>"
+											},
+											{
+												"key": "Customer",
+												"value": "<string>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/iems-download/<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"iems-download",
+												"<string>"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Purchase user package",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "<string>"
+									},
+									{
+										"key": "account_id",
+										"value": "<integer>"
+									},
+									{
+										"key": "Customer",
+										"value": "<string>"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/purchasing-packages",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"purchasing-packages"
+									]
+								},
+								"description": "Allow user to purchase chosen package"
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "authorization",
+												"value": "<string>"
+											},
+											{
+												"key": "account_id",
+												"value": "<integer>"
+											},
+											{
+												"key": "Customer",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/purchasing-packages",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"purchasing-packages"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Get all user activities (All transactions)",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "<string>"
+									},
+									{
+										"key": "account_id",
+										"value": "<integer>"
+									},
+									{
+										"key": "Customer",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/activities?transaction-type=<integer>&date-from=<integer>&date-to=<integer>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"activities"
+									],
+									"query": [
+										{
+											"key": "transaction-type",
+											"value": "<integer>"
+										},
+										{
+											"key": "date-from",
+											"value": "<integer>"
+										},
+										{
+											"key": "date-to",
+											"value": "<integer>"
+										}
+									]
+								},
+								"description": "List all transactions per user"
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "authorization",
+												"value": "<string>"
+											},
+											{
+												"key": "account_id",
+												"value": "<integer>"
+											},
+											{
+												"key": "Customer",
+												"value": "<string>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/activities?transaction-type=<integer>&date-from=<integer>&date-to=<integer>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"activities"
+											],
+											"query": [
+												{
+													"key": "transaction-type",
+													"value": "<integer>"
+												},
+												{
+													"key": "date-from",
+													"value": "<integer>"
+												},
+												{
+													"key": "date-to",
+													"value": "<integer>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Get user subscribed packages",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "<string>"
+									},
+									{
+										"key": "account_id",
+										"value": "<integer>"
+									},
+									{
+										"key": "Customer",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/user-subscription-packages",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user-subscription-packages"
+									]
+								},
+								"description": "List all Subscriptin pakcages by user"
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "authorization",
+												"value": "<string>"
+											},
+											{
+												"key": "account_id",
+												"value": "<integer>"
+											},
+											{
+												"key": "Customer",
+												"value": "<string>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/user-subscription-packages",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user-subscription-packages"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"variable": [
+		{
+			"id": "baseUrl",
+			"key": "baseUrl",
+			"value": "/iemanager",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

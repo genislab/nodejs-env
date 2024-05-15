@@ -1,0 +1,144 @@
+{
+    "type": "object",
+    "properties": {
+        "version": {
+            "type": "number"
+        },
+        "keyboard-config": {
+            "type": "string"
+        },
+        "hostname": {
+            "type": "string"
+        },
+        "dns-settings": {
+            "type": "object",
+            "properties": {
+                "nameservers": {
+                    "type": "array",
+                    "max": 20,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "searches": {
+                    "type": "array",
+                    "max": 20,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "nameservers",
+                "searches"
+            ]
+        },
+        "network-settings": {
+            "type": "object",
+            "properties": {
+                "dhcp-mode": {
+                    "type": "string"
+                },
+                "manual-settings": {
+                    "type": "object",
+                    "properties": {
+                        "ip-address": {
+                            "type": "string"
+                        },
+                        "gateway": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "ip-address",
+                        "gateway"
+                    ]
+                }
+            },
+            "required": [
+                "dhcp-mode",
+                "manual-settings"
+            ]
+        },
+        "proxy-settings": {
+            "type": "object",
+            "properties": {
+                "http": {
+                    "type": "string"
+                },
+                "https": {
+                    "type": "string"
+                },
+                "no_proxy": {
+                    "type": "array",
+                    "max": 20,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "http",
+                "https",
+                "no_proxy"
+            ]
+        },
+        "certificates": {
+            "type": "array",
+            "max": 20,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string"
+                    },
+                    "private-key": {
+                        "type": "string"
+                    },
+                    "certificate": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "type",
+                    "private-key",
+                    "certificate"
+                ]
+            }
+        },
+        "cloud-credentials": {
+            "type": "object",
+            "properties": {
+                "client-id": {
+                    "type": "string"
+                },
+                "client-secret": {
+                    "type": "string"
+                },
+                "customer": {
+                    "type": "string"
+                },
+                "account-id": {
+                    "type": "number"
+                },
+                "iems-id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "client-id",
+                "client-secret",
+                "customer",
+                "account-id",
+                "iems-id"
+            ]
+        }
+    },
+    "required": [
+        "version",
+        "keyboard-config",
+        "hostname",
+        "network-settings",
+        "cloud-credentials"
+    ]
+}
